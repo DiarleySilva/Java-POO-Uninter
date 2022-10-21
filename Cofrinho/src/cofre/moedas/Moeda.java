@@ -13,7 +13,7 @@ public abstract class Moeda {
 	
 	abstract void info();
 	
-	abstract void converter();
+	abstract double converter();
 
 	@Override
 	public int hashCode() {
@@ -30,5 +30,9 @@ public abstract class Moeda {
 			return false;
 		Moeda other = (Moeda) obj;
 		return Double.doubleToLongBits(valor) == Double.doubleToLongBits(other.valor);
+	}
+
+	public double converter(Moeda moeda) {
+		return 0;
 	}
 }

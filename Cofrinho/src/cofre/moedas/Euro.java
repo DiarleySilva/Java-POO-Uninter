@@ -1,23 +1,19 @@
 package cofre.moedas;
 
 public class Euro extends Moeda{
-	
-	double total;
 
 	public Euro(double valor) {
 		super(valor);
 	}
 
 	@Override
-	void info() {
+	void info() { // Retorna o valor em dólares
 		System.out.println("Euro: " + valor);
 	}
 
 	@Override
-	void converter() {
-		double convertido = valor * 0.193;
-		System.out.println("Valor convertido para Euro: " + convertido);
-		total += convertido;
+	public double converter(Moeda moeda) { // Converte a moeda para a cotação do euro
+		return moeda.valor * 5.11; // A cotação do dia 12/10/2022 ás 08:20 era R$5,11 
 	}
 
 	@Override
@@ -39,5 +35,10 @@ public class Euro extends Moeda{
 		if (getClass() != obj.getClass())
 			return false;
 		return true;
+	}
+
+	@Override
+	double converter() {
+		return 0;
 	}
 }

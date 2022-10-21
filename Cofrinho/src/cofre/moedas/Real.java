@@ -1,20 +1,19 @@
 package cofre.moedas;
 
 public class Real extends Moeda{
-	
-	double total;
 
 	public Real(double valor) {
 		super(valor);
 	}
 
 	@Override
-	void info() {
+	void info() { // Retorna o valor em reais
 		System.out.println("Real: R$" + valor);
 	}
 
 	@Override
-	void converter() {
+	public double converter(Moeda moeda) { // Converte a moeda para reais
+		return moeda.valor; // A conversão para reais é o mesmo valor
 	}
 
 	@Override
@@ -36,5 +35,10 @@ public class Real extends Moeda{
 		if (getClass() != obj.getClass())
 			return false;
 		return true;
+	}
+
+	@Override
+	double converter() {
+		return 0;
 	}
 }
